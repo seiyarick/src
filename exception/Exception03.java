@@ -16,12 +16,14 @@ public class Exception03 {
 			// キャッチした例外インスタンスをスロー
 			throw e;
 		}
+		// finallyブロックでないので実行されない
 		System.out.println("プログラム終了");
 	}
 	
 	public static void division(int a , int b) {
 		System.out.println(a + "÷" + b + "は？");
 		if (b == 0) {
+			// 割り算で例外が発生するので、意図的にIllegalArgumentException例外をスロー
 			throw new IllegalArgumentException("引数が不正です");
 		}
 		int result = a - b;
@@ -29,6 +31,4 @@ public class Exception03 {
 	}
 }
 
-//100÷0は？
-//IllegalArgumentException例外が発生
-//プログラム終了
+
