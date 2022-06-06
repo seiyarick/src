@@ -13,6 +13,7 @@ public class Chapter10 {
 			System.out.println("validIndexの呼び出しが終了");
 		}catch (IllegalArgumentException e) {
 			System.out.println("IlleralArgumentExceptionが発生しました");
+			// スタックトーレスを出力
 			e.printStackTrace();
 		}
 		// try-catch文を記述
@@ -23,8 +24,10 @@ public class Chapter10 {
 			Chapter10.throwSQLException();
 		}catch(SQLException e) {
 			System.out.println("SQLExceptionが発生しました");
+			// スタックトレースを出力
 			e.printStackTrace();
 		}finally {
+			// 例外発生しても出力するため、finallyブロックに記述
 			System.out.println("throwSQLExceptionの呼び出し終了");
 		}
 		System.out.println("mainメソッド終了");
@@ -34,13 +37,16 @@ public class Chapter10 {
 	// ・indexがarrayのサイズの範囲内なら、インデックスの要素を出力
 	// ・サイズの範囲外なら、IllegalArgumentExceptionをスロー
 	public static void validIndex(int[] array, int index){
+		// 配列サイズは、lengthで取得
 		if (array.length <= index) {
+			// throw文で、例外をスロー
 			throw new IllegalArgumentException(index + "はサイズの範囲外です");
 		}
 		System.out.println("インデックス" + index + "の要素は" + array[index] + "です");
 	}
-	
+	// スローされる例外が検査例外なのでthrows文が必要
 	public static void throwSQLException() throws SQLException{
+		// SQLExceptionは、通常、SQLでエラーの場合に発生する例外
 		throw new SQLException("SQLエラーです");
 	}
 
