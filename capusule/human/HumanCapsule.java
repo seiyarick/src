@@ -1,6 +1,7 @@
 package capusule.human;
 
 public class HumanCapsule {
+	// privateのアクセス修飾子を設定して外部から隠蔽
 	private String name;
 	private int age;
 	
@@ -8,15 +9,16 @@ public class HumanCapsule {
 		this.name = name;
 		this.age = age;
 	}
-	
+	// nameのgetterメソッド
 	public String getName() {
 		return this.name;
 	}
-	
+	// nameのsetterメソッド
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	// ageのgetterメソッド
+	// ageは外部からの変更防止なので、setterメソッドは作成しない
 	public int getAge() {
 		return this.age;
 	}
