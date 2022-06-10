@@ -1,6 +1,8 @@
 package practice;
 
+// クラス名もCapusuleManになる
 public class CapsuleMan {
+	// privateにして隠蔽
 	private String name;
 	private int age;
 	
@@ -8,19 +10,16 @@ public class CapsuleMan {
 		this.name = name;
 		this.age = age;
 	}
-
+    // nameのgetter
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
+    // ageのgetter
 	public int getAge() {
 		return age;
 	}
-
+    // ageのsetter
 	public void setAge(int age) {
 		this.age = age;
 	}
