@@ -18,7 +18,7 @@ public class FlyingPhone implements Phone, Flying {
     // オーバーライドしないとコンパイルエラー
     public void powerOff() {
     	// Flyingのdefaultメソッドを呼び出す
-    	Phone.super.powerOff();
+    	Flying.super.powerOff();
     }
 
 }
